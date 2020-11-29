@@ -19,6 +19,7 @@
   "homepage": "https://github.com/idRit/packet-intrusion-detection-system#readme",
   "dependencies": {
     "@tensorflow/tfjs": "^2.7.0",
+    "@tensorflow/tfjs-node": "^2.7.0",
     "cornhundred-clusterfck": "^0.7.5",
     "csvtojson": "^2.0.10",
     "js-datasets-iris": "^1.0.4",
