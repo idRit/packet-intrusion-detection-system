@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <script>
+        var full = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
+        let socket = io.connect(full);
+
+        socket.on('pkt', (res) => {
+            console.log(JSON.parse(res));
+        });
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        setInterval(() => {
+            let i = getRandomInt(22544);
+            socket.emit('reqData', i);
+            console.log('Emitted Request');
+        }, 18000);
+    </script>
+</body>
+
+</html>
